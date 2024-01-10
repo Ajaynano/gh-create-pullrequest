@@ -18,8 +18,10 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: production-promotion
+          branch: develop
           token: ${{ secrets.PAT_PR }}
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           assignees: Ajaynano
           labels: |
             report
