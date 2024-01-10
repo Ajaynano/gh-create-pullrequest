@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: production
+          ref: main
       - name: Reset promotion branch
         run: |
           git fetch origin main:main
@@ -18,7 +18,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: production-promotion
+          branch: develop
           token: ${{ secrets.PAT_PR }}
           assignees: Ajaynano
           labels: |
