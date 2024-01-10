@@ -15,9 +15,17 @@ jobs:
           git fetch origin main:main
           git reset --hard main
       - name: Create Pull Request
+        id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
           branch: production-promotion
           token: ${{ secrets.PAT_PR }}
-      - name: updating production
-        run: echo "udapting production branch"
+          assignees: Ajaynano
+          labels: |
+            report
+            automated pr
+      - name: Check outputs
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"   
