@@ -20,6 +20,10 @@ jobs:
         with:
           branch: production-promotion
           token: ${{ secrets.PAT_PR }}
+          assignees: Ajaynano
+          labels: |
+            report
+            automated pr
       - name: Check outputs
         if: ${{ steps.cpr.outputs.pull-request-number }}
         run: |
