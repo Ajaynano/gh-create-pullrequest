@@ -20,7 +20,6 @@ jobs:
         with:
           branch: develop
           token: ${{ secrets.PAT_PR }}
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           assignees: Ajaynano
           labels: |
             report
