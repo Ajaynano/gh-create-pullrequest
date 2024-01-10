@@ -18,6 +18,6 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           branch: production-promotion
-          token: ${{ secrets.PAT_CPR }}
+          token: ${{ secrets.PAT_PR }}
       - name: updating production
         run: echo "udapting production branch"
