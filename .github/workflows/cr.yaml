@@ -5,17 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: production
-      - name: Reset promotion branch
-        run: |
-          git fetch origin main:main
-          git reset --hard main
+        # with:
+        #   ref: 
+      # - name: Reset promotion branch
+      #   run: |
+      #     git fetch origin main:main
+      #     git reset --hard main
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: develop
+          branch: main
           token: ${{ secrets.PAT_PR }}
           assignees: Ajaynano
           labels: |
